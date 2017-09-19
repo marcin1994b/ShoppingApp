@@ -9,9 +9,6 @@ import com.example.marcin.shoppingapp.Model.ProductsManager
 class ShoppingPresenter(val view: Contracts.MainLayout, val productsManager: ProductsManager,
                         val bonusesManager: BonusesManager): Contracts.ShoppingPresenter {
 
-    /*private val productsManager : ProductsManager = ProductsManager()
-    private val bonusesManager : BonusesManager = BonusesManager()*/
-
     override fun onViewCreate() {
         view.setProductsTextViews(productsManager.productsList)
         view.setBonusTextViews(bonusesManager.bonusesList)

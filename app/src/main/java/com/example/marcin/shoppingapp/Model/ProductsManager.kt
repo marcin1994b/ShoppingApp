@@ -21,7 +21,7 @@ open class ProductsManager {
             cost -= productsList[0].price
         }
         if(shouldApplySecondDiscount(bonusesList)){
-            cost = cost - (cost*0.1)
+            cost -= (cost * 0.1)
         }
         return cost
     }

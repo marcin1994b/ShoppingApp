@@ -81,4 +81,23 @@ class ProductsManagerTests {
         bonusesList[0] = true
         Assert.assertEquals(6.25, productsManager.calProductsCost(bonusesList))
     }
+
+    @Test
+    fun ifApplyFirstAndSecondDiscountForGoodConditions(){
+        productsManager.setNumberOfProduct(0,3)
+        productsManager.setNumberOfProduct(1,1)
+        productsManager.setNumberOfProduct(2,1)
+        bonusesList[0] = true
+        bonusesList[1] = true
+        Assert.assertEquals(4.275, productsManager.calProductsCost(bonusesList))
+    }
+
+    @Test
+    fun ifApplyFirstAndSecondDiscountForBadConditions(){
+        productsManager.setNumberOfProduct(0,2)
+        productsManager.setNumberOfProduct(1,1)
+        bonusesList[0] = true
+        bonusesList[1] = true
+        Assert.assertEquals(4.5, productsManager.calProductsCost(bonusesList))
+    }
 }
